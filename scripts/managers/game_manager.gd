@@ -5,3 +5,4 @@ func _ready() -> void:
 
 func _update() -> void:
     pass
+
