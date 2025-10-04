@@ -1,12 +1,72 @@
-[gd_scene format=3 uid="uid://b331egxpamfwm"]
+[gd_scene load_steps=6 format=3 uid="uid://b331egxpamfwm"]
+
+[ext_resource type="Material" uid="uid://dphedafn76ry3" path="res://materials/room_walls.tres" id="1_ycayy"]
+[ext_resource type="Material" uid="uid://dmli6l7x1k657" path="res://materials/table_top.tres" id="2_bw6k5"]
+[ext_resource type="Material" uid="uid://cp3055l78att8" path="res://materials/table_leg.tres" id="3_y3j0m"]
+[ext_resource type="Script" uid="uid://ctb2eo3g6xxds" path="res://scripts/gameplay/camera_movement.gd" id="4_bw6k5"]
+
+[sub_resource type="Environment" id="Environment_rurhu"]
 
 [node name="GameScene" type="Node3D"]
 
-[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_rurhu")
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D"]
+[node name="RoomBox" type="CSGCombiner3D" parent="."]
+material_override = ExtResource("1_ycayy")
+
+[node name="RoomBorders" type="CSGBox3D" parent="RoomBox"]
 size = Vector3(6, 3, 6)
 
-[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
+[node name="RoomInsideAir" type="CSGBox3D" parent="RoomBox"]
 operation = 2
 size = Vector3(5.8, 2.8, 5.8)
+
+[node name="Window" type="CSGBox3D" parent="RoomBox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.95, 0.4, 0)
+operation = 2
+size = Vector3(0.2, 1.6, 4)
+
+[node name="Table" type="Node" parent="RoomBox"]
+
+[node name="TableTop" type="CSGBox3D" parent="RoomBox/Table"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4494629, 0)
+material_override = ExtResource("2_bw6k5")
+size = Vector3(2, 0.1, 1.5)
+
+[node name="TableLeg" type="CSGCylinder3D" parent="RoomBox/Table"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9, -0.9, 0.6)
+material_override = ExtResource("3_y3j0m")
+radius = 0.05
+height = 1.0
+
+[node name="TableLeg2" type="CSGCylinder3D" parent="RoomBox/Table"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9, -0.9, 0.6)
+material_override = ExtResource("3_y3j0m")
+radius = 0.05
+height = 1.0
+
+[node name="TableLeg3" type="CSGCylinder3D" parent="RoomBox/Table"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9, -0.9, -0.6)
+material_override = ExtResource("3_y3j0m")
+radius = 0.05
+height = 1.0
+
+[node name="TableLeg4" type="CSGCylinder3D" parent="RoomBox/Table"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9, -0.9, -0.6)
+material_override = ExtResource("3_y3j0m")
+radius = 0.05
+height = 1.0
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.13408893, 1.3720051)
+script = ExtResource("4_bw6k5")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 1.4126741, 0)
+light_color = Color(1, 0.29411766, 0, 1)
+light_energy = 4.0
+light_specular = 0.0
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+visible = false
