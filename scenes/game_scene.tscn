@@ -1,5 +1,6 @@
-[gd_scene load_steps=17 format=3 uid="uid://b331egxpamfwm"]
+[gd_scene load_steps=20 format=3 uid="uid://b331egxpamfwm"]
 
+[ext_resource type="Texture2D" uid="uid://c8box06e8u0dx" path="res://assets/images/skybox/skybox.webp" id="1_b5spy"]
 [ext_resource type="Material" uid="uid://dphedafn76ry3" path="res://materials/room_walls.tres" id="1_ycayy"]
 [ext_resource type="Material" uid="uid://dmli6l7x1k657" path="res://materials/table_top.tres" id="2_bw6k5"]
 [ext_resource type="Material" uid="uid://cp3055l78att8" path="res://materials/table_leg.tres" id="3_y3j0m"]
@@ -8,11 +9,22 @@
 [ext_resource type="AudioStream" uid="uid://dddnl060qj0bf" path="res://assets/audio/ambient/default_ambient.wav" id="6_rurhu"]
 [ext_resource type="PackedScene" uid="uid://34g7yrawvut" path="res://nodes/models/chciwy_andrzej.tscn" id="7_kk2rg"]
 
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_utbpp"]
+panorama = ExtResource("1_b5spy")
+
+[sub_resource type="Sky" id="Sky_mw25s"]
+sky_material = SubResource("PanoramaSkyMaterial_utbpp")
+
 [sub_resource type="Environment" id="Environment_rurhu"]
+background_mode = 2
+background_energy_multiplier = 0.6
+sky = SubResource("Sky_mw25s")
+sky_rotation = Vector3(0, -1.6371188, -3.1415927)
+ambient_light_source = 3
 glow_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bw6k5"]
-albedo_color = Color(0.9172302, 0.38658333, 0.275071, 1)
+albedo_color = Color(0.5132329, 0.5132329, 0.5132329, 1)
 
 [sub_resource type="Animation" id="Animation_bw6k5"]
 resource_name = "MoveSpotlight"
@@ -261,7 +273,7 @@ mouse_sensitivity = 0.003
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 1.4126741, 0)
-light_color = Color(1, 0.29411766, 0, 1)
+light_color = Color(0.7, 0.7, 0.7, 1)
 light_energy = 4.0
 light_specular = 0.0
 
