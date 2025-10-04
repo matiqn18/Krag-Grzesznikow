@@ -8,6 +8,6 @@ func _unhandled_input(event: InputEvent) -> void:
 	
 	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		if event is InputEventMouseMotion:
-			rotate_y(-event.relative.x * 0.01)
-			self.rotate_x(-event.relative.y * 0.01)
-			self.rotation.x = clamp(self.rotation.x, deg_to_rad(-90), deg_to_rad(90))
+			rotation.y -= event.relative.x * 0.01
+			rotation.x -= event.relative.y * 0.01
+			rotation.x = clamp(rotation.x, deg_to_rad(-90), deg_to_rad(90))
