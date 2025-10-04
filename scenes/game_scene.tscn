@@ -1,10 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://b331egxpamfwm"]
+[gd_scene load_steps=13 format=3 uid="uid://b331egxpamfwm"]
 
 [ext_resource type="Material" uid="uid://dphedafn76ry3" path="res://materials/room_walls.tres" id="1_ycayy"]
 [ext_resource type="Material" uid="uid://dmli6l7x1k657" path="res://materials/table_top.tres" id="2_bw6k5"]
 [ext_resource type="Material" uid="uid://cp3055l78att8" path="res://materials/table_leg.tres" id="3_y3j0m"]
 [ext_resource type="Script" uid="uid://ctb2eo3g6xxds" path="res://scripts/gameplay/camera_movement.gd" id="4_bw6k5"]
 [ext_resource type="AudioStream" uid="uid://csjq0bw3iye4s" path="res://assets/audio/sfx/loud_noises/loud_noise_1.wav" id="5_y3j0m"]
+[ext_resource type="PackedScene" uid="uid://bl14m7sk5nnht" path="res://assets/models/humans/HumanMaleModel2_2.glb" id="6_kk2rg"]
+[ext_resource type="AudioStream" uid="uid://dddnl060qj0bf" path="res://assets/audio/ambient/default_ambient.wav" id="6_rurhu"]
 
 [sub_resource type="Environment" id="Environment_rurhu"]
 glow_enabled = true
@@ -55,7 +57,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0, -1.3962634, 0)]
+"values": [Vector3(0, -0.84648466, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rurhu"]
@@ -131,6 +133,7 @@ height = 1.0
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.13408893, 1.3720051)
 script = ExtResource("4_bw6k5")
+mouse_sensitivity = 0.003
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 1.4126741, 0)
@@ -146,7 +149,7 @@ libraries = {
 }
 
 [node name="SpotLight3D2" type="SpotLight3D" parent="StrangeInteractions/Inter1"]
-transform = Transform3D(0.17364822, 0, -0.9848077, 0, 1, 0, 0.9848077, 0, 0.17364822, -12.894454, 0.30394733, 0.0251261)
+transform = Transform3D(0.66262007, 0, -0.7489557, 0, 1, 0, 0.7489557, 0, 0.66262007, -12.894454, 0.30394733, 0.0251261)
 light_color = Color(1, 0, 0, 1)
 light_energy = 16.0
 shadow_enabled = true
@@ -155,3 +158,12 @@ spot_angle = 7.0
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="StrangeInteractions/Inter1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.886465, 0, 0)
+
+[node name="AmbientPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_rurhu")
+volume_db = -10.0
+autoplay = true
+bus = &"Music"
+
+[node name="HumanMaleModel2_2" parent="." instance=ExtResource("6_kk2rg")]
+transform = Transform3D(0.51, 0, 0, 0, 0.51, 0, 0, 0, 0.51, 0, -1.4, -1.385)
