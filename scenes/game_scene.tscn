@@ -1,6 +1,5 @@
-[gd_scene load_steps=20 format=3 uid="uid://b331egxpamfwm"]
+[gd_scene load_steps=21 format=3 uid="uid://b331egxpamfwm"]
 
-[ext_resource type="Texture2D" uid="uid://c8box06e8u0dx" path="res://assets/images/skybox/skybox.webp" id="1_b5spy"]
 [ext_resource type="Material" uid="uid://dphedafn76ry3" path="res://materials/room_walls.tres" id="1_ycayy"]
 [ext_resource type="Material" uid="uid://dmli6l7x1k657" path="res://materials/table_top.tres" id="2_bw6k5"]
 [ext_resource type="Material" uid="uid://cp3055l78att8" path="res://materials/table_leg.tres" id="3_y3j0m"]
@@ -8,23 +7,13 @@
 [ext_resource type="AudioStream" uid="uid://csjq0bw3iye4s" path="res://assets/audio/sfx/loud_noises/loud_noise_1.wav" id="5_y3j0m"]
 [ext_resource type="AudioStream" uid="uid://dddnl060qj0bf" path="res://assets/audio/ambient/default_ambient.wav" id="6_rurhu"]
 [ext_resource type="PackedScene" uid="uid://34g7yrawvut" path="res://nodes/models/chciwy_andrzej.tscn" id="7_kk2rg"]
-
-[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_utbpp"]
-panorama = ExtResource("1_b5spy")
-
-[sub_resource type="Sky" id="Sky_mw25s"]
-sky_material = SubResource("PanoramaSkyMaterial_utbpp")
+[ext_resource type="Script" uid="uid://buafewbw8xf5h" path="res://scripts/managers/events_manager.gd" id="8_b5spy"]
 
 [sub_resource type="Environment" id="Environment_rurhu"]
-background_mode = 2
-background_energy_multiplier = 0.6
-sky = SubResource("Sky_mw25s")
-sky_rotation = Vector3(0, -1.6371188, -3.1415927)
-ambient_light_source = 3
 glow_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bw6k5"]
-albedo_color = Color(0.5132329, 0.5132329, 0.5132329, 1)
+albedo_color = Color(0.9172302, 0.38658333, 0.275071, 1)
 
 [sub_resource type="Animation" id="Animation_bw6k5"]
 resource_name = "MoveSpotlight"
@@ -57,25 +46,176 @@ tracks/1/keys = {
 "values": [Vector3(0, -1.097812, 0), Vector3(0, -1.4451326, 0), Vector3(0, -1.5062191, 0), Vector3(0, -1.4416419, 0), Vector3(0, -1.6336281, 0), Vector3(0, -1.7645279, 0), Vector3(0, -1.5149457, 0), Vector3(0, -2.0472713, 0), Vector3(0, -2.1694443, 0), Vector3(0, -1.1519173, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_y3j0m"]
+[sub_resource type="Animation" id="Animation_mw25s"]
+resource_name = "MoveSpotlight"
+length = 11.0
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Inter1/AudioStreamPlayer3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("5_y3j0m")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Inter1/SpotLight3D2:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.73333335, 1.1, 1.6, 2.2333333, 2.8, 3.4333334, 4.233333, 5.4, 5.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, -1.097812, 0), Vector3(0, -1.4451326, 0), Vector3(0, -1.5062191, 0), Vector3(0, -1.4416419, 0), Vector3(0, -1.6336281, 0), Vector3(0, -1.7645279, 0), Vector3(0, -1.5149457, 0), Vector3(0, -2.0472713, 0), Vector3(0, -2.1694443, 0), Vector3(0, -1.1519173, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_tcjrq"]
+resource_name = "MoveSpotlight"
+length = 11.0
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Inter1/AudioStreamPlayer3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("5_y3j0m")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Inter1/SpotLight3D2:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.73333335, 1.1, 1.6, 2.2333333, 2.8, 3.4333334, 4.233333, 5.4, 5.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, -1.097812, 0), Vector3(0, -1.4451326, 0), Vector3(0, -1.5062191, 0), Vector3(0, -1.4416419, 0), Vector3(0, -1.6336281, 0), Vector3(0, -1.7645279, 0), Vector3(0, -1.5149457, 0), Vector3(0, -2.0472713, 0), Vector3(0, -2.1694443, 0), Vector3(0, -1.1519173, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_rvs2r"]
+resource_name = "MoveSpotlight"
+length = 11.0
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Inter1/AudioStreamPlayer3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("5_y3j0m")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Inter1/SpotLight3D2:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.73333335, 1.1, 1.6, 2.2333333, 2.8, 3.4333334, 4.233333, 5.4, 5.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, -1.097812, 0), Vector3(0, -1.4451326, 0), Vector3(0, -1.5062191, 0), Vector3(0, -1.4416419, 0), Vector3(0, -1.6336281, 0), Vector3(0, -1.7645279, 0), Vector3(0, -1.5149457, 0), Vector3(0, -2.0472713, 0), Vector3(0, -2.1694443, 0), Vector3(0, -1.1519173, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_tqxxy"]
+resource_name = "MoveSpotlight"
+length = 11.0
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Inter1/AudioStreamPlayer3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("5_y3j0m")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Inter1/SpotLight3D2:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.73333335, 1.1, 1.6, 2.2333333, 2.8, 3.4333334, 4.233333, 5.4, 5.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, -1.097812, 0), Vector3(0, -1.4451326, 0), Vector3(0, -1.5062191, 0), Vector3(0, -1.4416419, 0), Vector3(0, -1.6336281, 0), Vector3(0, -1.7645279, 0), Vector3(0, -1.5149457, 0), Vector3(0, -2.0472713, 0), Vector3(0, -2.1694443, 0), Vector3(0, -1.1519173, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rurhu"]
+_data = {
+&"Anastazja": SubResource("Animation_mw25s"),
+&"Hackyeah": SubResource("Animation_tqxxy"),
+&"MoveSpotlight": SubResource("Animation_bw6k5"),
+&"Test": SubResource("Animation_rvs2r"),
+&"Test2": SubResource("Animation_tcjrq")
+}
+
+[sub_resource type="Animation" id="Animation_b5spy"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Inter1/SpotLight3D2:rotation")
+tracks/0/path = NodePath("../DoorPivot:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0, -0.84648466, 0)]
+"values": [Vector3(0, 0, 0)]
 }
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_rurhu"]
-_data = {
-&"MoveSpotlight": SubResource("Animation_bw6k5"),
-&"RESET": SubResource("Animation_y3j0m")
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Chciwy Andrzej:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(3.8949873, -1.4007999, -2.1208348)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Chciwy Andrzej:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -1.5707964, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_kk2rg"]
@@ -126,45 +266,6 @@ tracks/3/loop_wrap = true
 tracks/3/keys = {
 "clips": PackedStringArray("Walk", "Walk"),
 "times": PackedFloat32Array(0, 3.3666666)
-}
-
-[sub_resource type="Animation" id="Animation_b5spy"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../DoorPivot:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../Chciwy Andrzej:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(3.8949873, -1.4007999, -2.1208348)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../Chciwy Andrzej:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, -1.5707964, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_utbpp"]
@@ -273,11 +374,14 @@ mouse_sensitivity = 0.003
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 1.4126741, 0)
-light_color = Color(0.7, 0.7, 0.7, 1)
+light_color = Color(1, 0.29411766, 0, 1)
 light_energy = 4.0
 light_specular = 0.0
 
-[node name="StrangeInteractions" type="Node3D" parent="."]
+[node name="StrangeInteractions" type="Node3D" parent="." node_paths=PackedStringArray("anomaly", "timer")]
+script = ExtResource("8_b5spy")
+anomaly = NodePath("Inter1")
+timer = NodePath("../Timer")
 
 [node name="Inter1" type="AnimationPlayer" parent="StrangeInteractions"]
 libraries = {
@@ -285,7 +389,7 @@ libraries = {
 }
 
 [node name="SpotLight3D2" type="SpotLight3D" parent="StrangeInteractions/Inter1"]
-transform = Transform3D(0.66262007, 0, -0.7489557, 0, 1, 0, 0.7489557, 0, 0.66262007, -12.894454, 0.30394733, 0.0251261)
+transform = Transform3D(0.45554495, 0, -0.8902128, 0, 1, 0, 0.8902128, 0, 0.45554495, -12.894454, 0.30394733, 0.0251261)
 light_color = Color(1, 0, 0, 1)
 light_energy = 16.0
 shadow_enabled = true
@@ -310,3 +414,10 @@ transform = Transform3D(-2.2292808e-08, 0, -0.51, 0, 0.51, 0, 0.51, 0, -2.229280
 libraries = {
 &"": SubResource("AnimationLibrary_b5spy")
 }
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+ignore_time_scale = true
+
+[connection signal="timeout" from="Timer" to="StrangeInteractions" method="trigger_anomaly_time"]
