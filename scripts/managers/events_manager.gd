@@ -18,7 +18,6 @@ func select_anomaly() -> void:
     random = randi() % len(anomalies)
     while random in used_anomalies_queue:
         random = randi() % len(anomalies)
-    print(used_anomalies_queue, ": ", random, " - ", anomalies[random])
     update_queue(random)
     var chosen_anomaly = anomalies[random]
     anomaly.play(chosen_anomaly)
@@ -31,5 +30,6 @@ func update_queue(index: int) -> void:
 
 func trigger_anomaly_time() -> void:
     select_anomaly()
-    random = (randi() % 5) + 12
+    random = (randi() % 11) + 40
     timer.wait_time = random
+    timer.start()
