@@ -1,5 +1,6 @@
 extends Node3D
 
+signal sinner_killed_next_sinner
 signal drop_the_sinner
 
 func _ready() -> void:

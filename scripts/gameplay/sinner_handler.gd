@@ -14,6 +14,7 @@ var sinners_left := 4
 
 func _ready() -> void:
     world_environment = get_node("/root/GameScene/WorldEnvironment");
+    GameManager.sinner_killed_next_sinner.connect(next_sinner)
     GameManager.drop_the_sinner.connect(drop_the_sinner)
     available_sinners = get_node("AvailableSinners").get_children()
     enter_sinner()
@@ -21,7 +22,7 @@ func _ready() -> void:
 func enter_sinner() -> void:
     if sinners_left > 0:
         sinners_left -= 1
-        encounter_counter += 1
+        encounter_counter += randi() % 1
         is_aggressive = encounter_counter > 0
         active_sinner = aggressive_sinner if is_aggressive else choose_a_sinner();
         active_sinner.reparent(get_node("CurrentSinner"))
@@ -29,6 +30,7 @@ func enter_sinner() -> void:
         active_sinner.rotation = Vector3(0,0,0)
         if is_aggressive:
             animation_player.play("sinner_attack")
+            encounter_counter = -999
         else:
             animation_player.play("sinner_enter")
         active_sinner.animation_player.play("Walk")
@@ -50,7 +52,8 @@ func drop_the_sinner() -> void:
 
 #HACK: Unused arg is a hack for the AnimationPlayer.animation_finished calling signals with the argument
 func next_sinner(_unused_arg = "") -> void:
-    animation_player.animation_finished.disconnect(next_sinner)
+    if animation_player.animation_finished.is_connected(next_sinner):
+        animation_player.animation_finished.disconnect(next_sinner)
     active_sinner.queue_free()
     # Update sinner list
     available_sinners = get_node("AvailableSinners").get_children()

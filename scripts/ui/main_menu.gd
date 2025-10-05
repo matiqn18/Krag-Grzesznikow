@@ -2,6 +2,9 @@ extends Node3D
 
 const GAME_SCENE_PATH := "res://scenes/game_scene.tscn"
 
+func _ready() -> void:
+    Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+
 func _on_play_button_pressed() -> void:
     Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
     get_tree().change_scene_to_file(GAME_SCENE_PATH)
