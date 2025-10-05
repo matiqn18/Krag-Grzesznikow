@@ -27,3 +27,4 @@ if {QuestionAvailable} > 0.0:
 		jump Start
 else:
 	- 1.
+	[signal arg="DropTheSinner"]

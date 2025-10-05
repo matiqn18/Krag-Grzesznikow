@@ -1,7 +1,14 @@
 extends Node3D
 
+signal sinner_killed_next_sinner
+signal drop_the_sinner
+
 func _ready() -> void:
-    pass
+    Dialogic.signal_event.connect(_handle_dialogic_signals)
 
 func _update() -> void:
     pass
+
+func _handle_dialogic_signals(arg) -> void:
+    if arg == "DropTheSinner":
+        drop_the_sinner.emit()

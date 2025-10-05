@@ -8,12 +8,12 @@ extends Node
 @export var animationPlayer: AnimationPlayer;
 @export var shotgun: Node3D;
 @export var sinner_handler: Node3D;
-    
+
 func _unhandled_input(event: InputEvent) -> void:
     if event is InputEventMouseButton and Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
         Shoot();
     
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
     if sinner_handler.is_aggressive:
         shotgun.visible = true
     else:
@@ -35,7 +35,13 @@ func CheckFireRaycastCollisionAndSpawnDecal():
         print("Raycast hit");  
         var pos = sinner_handler.active_sinner.global_position; 
         collisionPoint = raycast.get_collision_point();
+        if not sinner_handler.active_sinner.animation_player.animation_finished.is_connected(on_death_animation_finished):
+            sinner_handler.active_sinner.animation_player.animation_finished.connect(on_death_animation_finished)
         sinner_handler.active_sinner.animation_player.play("Death")
         sinner_handler.animation_player.stop();
         sinner_handler.active_sinner.global_position = pos;
+
+func on_death_animation_finished(_unused_arg = ""):
+        sinner_handler.active_sinner.animation_player.animation_finished.disconnect(on_death_animation_finished)
+        GameManager.sinner_killed_next_sinner.emit()
         

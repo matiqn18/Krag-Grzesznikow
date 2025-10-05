@@ -173,6 +173,18 @@ tracks/2/keys = {
 "update": 0,
 "values": [Vector3(0, 0, 0)]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CurrentSinner:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.99999994, 1, 0.99999994)]
+}
 
 [sub_resource type="Animation" id="Animation_77hjl"]
 resource_name = "sinner_attack"
@@ -276,6 +288,18 @@ tracks/3/keys = {
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0.6126106, 0), Vector3(0, 1.4660766, 0), Vector3(0, 1.5707964, 0)]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CurrentSinner:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
 
 [sub_resource type="Animation" id="Animation_utbpp"]
 resource_name = "sinner_exit"
@@ -287,10 +311,10 @@ tracks/0/path = NodePath("CurrentSinner:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.7),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.16666667, 0.6666667),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(0.031609297, -1.4, -1.0469089), Vector3(0.032, -6.005, -1.047)]
+"values": [Vector3(1.018, 0.014, 3.684), Vector3(1.0180001, -0.4333372, 3.684), Vector3(1.0180001, -5.905077, 3.684)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -299,10 +323,10 @@ tracks/1/path = NodePath("CurrentSinner:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.06666667),
+"times": PackedFloat32Array(0, 0.1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(-0.6457718, 0, 0)]
+"values": [Vector3(0, 1.5707964, 0), Vector3(-0.61086524, 1.5707964, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_b5spy"]
@@ -472,8 +496,6 @@ transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 0, 0, 0)
 
 [node name="AvailableSinners" type="Node3D" parent="SinnerHandler"]
 
-[node name="Booba" parent="SinnerHandler/AvailableSinners" instance=ExtResource("11_liy57")]
-
 [node name="Tadeusz" parent="SinnerHandler/AvailableSinners" instance=ExtResource("13_s76x2")]
 
 [node name="Jessica" parent="SinnerHandler/AvailableSinners" instance=ExtResource("12_mwyo0")]
@@ -483,6 +505,9 @@ transform = Transform3D(0.51, 0, 0, 0, 0.51, 0, 0, 0, 0.51, 0, 0, 0)
 
 [node name="Angelika" parent="SinnerHandler/AvailableSinners" instance=ExtResource("10_tqxxy")]
 transform = Transform3D(0.49499997, 0, 0, 0, 0.495, 0, 0, 0, 0.49499997, 0, 0, 0)
+
+[node name="Booba" parent="SinnerHandler/AvailableSinners" instance=ExtResource("11_liy57")]
+transform = Transform3D(0.50499994, 0, 0, 0, 0.505, 0, 0, 0, 0.50499994, 0, 0, 0)
 
 [node name="Anomalies" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 1.4126741, 0)
