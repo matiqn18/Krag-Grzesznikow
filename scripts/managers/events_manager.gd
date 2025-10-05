@@ -9,7 +9,8 @@ var used_anomalies_queue = []
 var max_queue_limit
 
 func _ready() -> void:
-	anomalies = anomaly.get_animation_list()
+	anomalies = Array(anomaly.get_animation_list())
+	anomalies.pop_back()
 	max_queue_limit = len(anomalies) - 3 if len(anomalies) > 3 else 0
 
 func select_anomaly() -> void:
