@@ -24,7 +24,6 @@ GameManager="*res://scenes/autoload/game_manager.tscn"
 
 directories/dch_directory={}
 directories/dtl_directory={
-"choices": "res://dialogic/timelines/choices.dtl",
 "test_timeline": "res://dialogic/timelines/test_timeline.dtl"
 }
 layout/style_directory={
