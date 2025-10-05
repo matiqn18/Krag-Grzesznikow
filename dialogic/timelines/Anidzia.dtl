@@ -6,7 +6,7 @@ if {QuestionAvailable} > 0.0:
 		set {QuestionAvailable} -= 1.0
 		jump Start
 	- 2. Czy kiedykolwiek skrzywdziłaś kogoś dla własnej korzyści?
-		Nie skrzywdziłam. Oni sami 	przyszli. Każdy z nich chciał coś ode mnie – ja tylko pozwoliłam im wierzyć, że mogą to mieć. Zawsze wiedziałam, kiedy się uśmiechnąć, kiedy odwrócić wzrok. To taka gra… w której przegrywa ten po drugiej stronie
+		Nie skrzywdziłam. Oni sami 	przyszli. Każdy z nich chciał coś ode mnie - ja tylko pozwoliłam im wierzyć, że mogą to mieć. Zawsze wiedziałam, kiedy się uśmiechnąć, kiedy odwrócić wzrok. To taka gra… w której przegrywa ten po drugiej stronie
 		set {QuestionAvailable} -= 1.0
 		jump Start
 	- 3. Czy kiedykolwiek żałowałaś swoich czynów?

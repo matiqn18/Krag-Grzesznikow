@@ -2,7 +2,7 @@ set {QuestionAvailable} = 3.0
 label Start
 if {QuestionAvailable} > 0.0:
 	- 1. Powiedz mi, czy kiedykolwiek uważałeś, że jesteś lepszy od innych?
-		Lepszy? Może… w kuchni. Inni gotowali, 	ja tworzyłem. Każdy posiłek był jak koronacja – a ja byłem 	królem smaków
+		Lepszy? Może… w kuchni. Inni gotowali, 	ja tworzyłem. Każdy posiłek był jak koronacja - a ja byłem 	królem smaków
 		set {QuestionAvailable} -= 1.0
 		jump Start
 	- 2. Czy kiedykolwiek skrzywdziłeś kogoś dla własnej korzyści?
@@ -14,7 +14,7 @@ if {QuestionAvailable} > 0.0:
 		set {QuestionAvailable} -= 1.0
 		jump Start
 	- 4. Czy inni cierpieli z powodu twoich decyzji?
-		Cierpieli. Król czasem miał mdłości po moich eksperymentach. Ale ja cierpiałem też – zbyt wiele smaków, zbyt wiele przypraw, a żaden nie wystarczał by mnie zadowolić. To była niekończąca się symfonia pożądania
+		Cierpieli. Król czasem miał mdłości po moich eksperymentach. Ale ja cierpiałem też - zbyt wiele smaków, zbyt wiele przypraw, a żaden nie wystarczał by mnie zadowolić. To była niekończąca się symfonia pożądania
 		set {QuestionAvailable} -= 1.0
 		set {secret} = true
 		jump Start
@@ -26,7 +26,7 @@ if {QuestionAvailable} > 0.0:
 		Zdradziłem swoich uczniów. 	Każdy, kto próbował mnie naśladować, nigdy nie mógł dosięgnąć smaku mojej duszy… więc zjadłem ich wraz z należącymi do nich nadziejami. To była smaczna konieczność.
 		set {QuestionAvailable} -= 1.0
 		jump Start
-	- 7. Co było dla ciebie ważniejsze – smak potrawy czy sam akt jej jedzenia? | [if {secret} == true]
+	- 7. Co było dla ciebie ważniejsze - smak potrawy czy sam akt jej jedzenia? | [if {secret} == true]
 		Smak jest poezją, ale jedzenie… jedzenie jest moją religią. I nigdy nie kończy się uczta, nigdy nie kończy zawsze chce się jeszcze.
 		set {QuestionAvailable} -= 1.0
 		jump Start
