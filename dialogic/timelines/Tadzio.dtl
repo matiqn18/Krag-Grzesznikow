@@ -1,0 +1,41 @@
+set {QuestionAvailable} = 3.0
+label Start
+if {QuestionAvailable} > 0.0:
+	- 1. Powiedz mi, czy kiedykolwiek uważałeś, że jesteś lepszy od innych?
+		Nie... Ja po prostu wiedziałem, że inni zrobią to gorzej. Więc robiłem to sam, dopóki nie przestało mi się chcieć. A kiedy już nie chciało — pozwoliłem im robić cokolwiek. W końcu wszystko jedno, prawda?
+		set {QuestionAvailable} -= 1.0
+		jump Start
+	- 2. Czy kiedykolwiek skrzywdziłeś kogoś dla własnej korzyści?
+		Skrzywdziłem? Nie. Oszczędzałem czas. Zrozum, wszystko można uprościć. Po co tracić godziny na procedury, które nic nie zmieniają? Pacjent to tylko ciało. Czasem się rozleje.
+		set {secret} = true
+		set {QuestionAvailable} -= 1.0
+		jump Start
+	- 3. Czy kiedykolwiek żałowałeś swoich czynów?
+		Nie z korzyści. Z obojętności. To nie było złośliwe — po prostu… nie miałem siły się przejmować. Zaszyć, nie zaszyć, zamknąć, wyjść. Z każdym rokiem coraz mniej mnie to obchodziło
+		set {QuestionAvailable} -= 1.0
+		jump Start
+	- 4. Czy inni cierpieli z powodu twoich decyzji?
+		Cierpieli... ale to nie były moje decyzje. Ja nic nie decydowałem. Po prostu nie reagowałem. Nie robiłem nic. A to, jak się okazuje, też boli.
+		set {QuestionAvailable} -= 1.0
+		
+		jump Start
+	- 5. Jakie wspomnienia najbardziej cię dręczą?
+		Te, w których siedzę i patrzę. Wiem, że powinienem coś zrobić, ale nie robię. Wiem, że mogę, ale nie chcę. Najlepsze jest to uczucie... spokoju. Jakby nic nie miało znaczenia. 
+		set {QuestionAvailable} -= 1.0
+		jump Start
+	- 6. Czy był ktoś, kogo zniszczyłeś lub zdradziłeś?
+		Pacjent. A potem siebie. Bo od tamtej operacji już nic nie miało sensu. Odebrali mi moją osobowość Moją pracę, nawet oddychanie było wysiłkiem.
+		set {QuestionAvailable} -= 1.0
+		jump Start
+	- 7. Sekret? | [if {secret} == true]
+		To Dekret
+		set {QuestionAvailable} -= 1.0
+		jump Start
+else:
+	- 1. Krąg Pychy — Zwierciadło Wiecznego Odbicia
+	- 2. Krąg Chciwości — Komnata Rąk
+	- 3. Krąg Nieczystości — Komnata Ciała
+	- 4. Krąg Zazdrości — Dolina Lustra Cudzych Oczu
+	- 5. Krąg Obżarstwa — Wnętrzność Świata
+	- 6. Krąg Lenistwa — Morze Uśpienia
+	- 7. Krąg Gniewu — Komnata Krzyku
