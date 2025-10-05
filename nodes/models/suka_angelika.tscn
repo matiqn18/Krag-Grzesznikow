@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://dxks2iooxg60p"]
+[gd_scene load_steps=12 format=3 uid="uid://dxks2iooxg60p"]
 
-[ext_resource type="PackedScene" uid="uid://7s3k8q3fmvr7" path="res://assets/models/humans/suka_angelika/andzela.glb" id="1_2njds"]
+[ext_resource type="PackedScene" uid="uid://7s3k8q3fmvr7" path="res://assets/models/humans/angelika/andzela.glb" id="1_2njds"]
+[ext_resource type="Script" uid="uid://bwrnakcrv857i" path="res://scripts/gameplay/aggresive_sinner_handler.gd" id="2_yequk"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_2njds"]
 points = PackedVector3Array(-0.40404052, 3.13865, 0.14230277, -0.82263285, 2.6004071, -0.037064686, -0.82263285, 2.6004071, 0.20213094, -0.40404052, 2.7201104, -0.037064686, -0.4639038, 3.13865, -0.09689286, -0.52368516, 2.6004071, 0.14230277, -0.40404052, 2.8396554, 0.20213094, -0.5835075, 3.0189466, 0.14230277, -0.52368516, 2.6603115, -0.09689286, -0.7628105, 2.7798564, 0.02276349, -0.4639038, 3.0787456, 0.20213094, -0.40404052, 3.13865, -0.09689286, -0.82263285, 2.6603115, 0.20213094, -0.52368516, 2.6004071, -0.037064686, -0.64320683, 2.8396554, -0.09689286, -0.82263285, 2.6603115, -0.037064686, -0.40404052, 2.7798564, -0.09689286, -0.64320683, 2.6004071, 0.20213094, -0.40404052, 2.7201104, 0.14230277, -0.4639038, 3.13865, 0.14230277, -0.52368516, 3.0787456, -0.09689286, -0.64320683, 2.6603115, -0.09689286, -0.40404052, 3.0787456, 0.20213094, -0.5835075, 3.0189466, -0.037064686, -0.7628105, 2.7798564, 0.082503855)
@@ -71,5 +72,8 @@ shape = SubResource("ConvexPolygonShape3D_f1f81")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0.1787934)
 shape = SubResource("ConvexPolygonShape3D_vfd37")
+
+[node name="aggro" type="Node3D" parent="."]
+script = ExtResource("2_yequk")
 
 [editable path="andzela"]

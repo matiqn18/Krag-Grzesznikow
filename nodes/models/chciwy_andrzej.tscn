@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://34g7yrawvut"]
+[gd_scene load_steps=9 format=3 uid="uid://34g7yrawvut"]
 
-[ext_resource type="PackedScene" uid="uid://bvmkkrntcsbit" path="res://assets/models/humans/chciwy_andrzej/ChciwyAndrzejModel.glb" id="1_d46bb"]
+[ext_resource type="PackedScene" uid="uid://bvmkkrntcsbit" path="res://assets/models/humans/andrzej/ChciwyAndrzejModel.glb" id="1_d46bb"]
+[ext_resource type="Script" uid="uid://bwrnakcrv857i" path="res://scripts/gameplay/aggresive_sinner_handler.gd" id="2_wmuon"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_d46bb"]
 points = PackedVector3Array(1.807499, 3.1374593, 0.19354847, -0.63380885, 3.0154512, -0.4778214, -0.6948278, 2.8934014, -0.4167666, -0.93917847, 3.1374593, 0.010384031, -0.20640135, 2.8322928, 0.19354847, 0.9529588, 2.8934014, -0.294657, -0.38973308, 3.2595928, -0.4167666, -0.08436346, 3.2595928, 0.13257134, 1.807499, 2.9544263, 0.31573576, 0.61598843, 3.1215236, -0.40873066, 0.46480715, 2.8322928, -0.3557118, 1.7464801, 3.1374593, 0.010384031, -0.93917847, 2.8934014, -0.11149255, -0.93917847, 3.1984842, -0.294657, 1.685461, 3.0764344, 0.31573576, 1.8687928, 2.9544263, 0.19354847, 0.3430441, 2.8322928, 0.13257134, -0.6948278, 3.2595928, -0.11149255, 0.6046432, 3.209149, -0.29086092, -0.93917847, 2.8934014, -0.294657, -0.93917847, 2.9544263, 0.010384031, -0.32871413, 3.1984842, -0.4778214, 1.7464801, 3.0154512, 0.010384031, 0.6156474, 3.0208175, -0.40799147, -0.20640135, 2.8934014, 0.19354847, 0.037949324, 3.2595928, 0.13257134, -0.93917847, 3.1374593, -0.3557118, -0.34153, 2.8577802, -0.32294503, 1.7464801, 3.1374593, 0.25468096, -0.93917847, 3.1984842, -0.050670777, -0.63380885, 3.1374593, -0.4778214, -0.63380885, 3.2595928, -0.3557118)
@@ -43,5 +44,8 @@ shape = SubResource("ConvexPolygonShape3D_jntya")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_swowl")
+
+[node name="aggro" type="Node3D" parent="."]
+script = ExtResource("2_wmuon")
 
 [editable path="ChciwyAndrzejModel"]

@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bjwngffgb3fl2"]
+[gd_scene load_steps=4 format=3 uid="uid://bjwngffgb3fl2"]
 
 [ext_resource type="PackedScene" uid="uid://d2xgqdiwi7unu" path="res://assets/models/humans/tadeusz/Tadeusz.glb" id="1_ide26"]
 [ext_resource type="Script" uid="uid://bm32odokbu64w" path="res://scripts/nodes/sinner_node.gd" id="1_xa7p4"]
+[ext_resource type="Script" uid="uid://bwrnakcrv857i" path="res://scripts/gameplay/aggresive_sinner_handler.gd" id="3_qm65w"]
 
 [node name="Tadeusz" type="Node3D" node_paths=PackedStringArray("animation_player")]
 transform = Transform3D(0.49, 0, 0, 0, 0.49, 0, 0, 0, 0.49, 0, 0, 0)
@@ -60,5 +61,8 @@ bones/68/rotation = Quaternion(-0.0051285215, -0.012185353, -0.019401453, 0.9997
 bones/70/rotation = Quaternion(-0.02087292, 0.9861523, -0.16451424, -0.001743939)
 bones/72/rotation = Quaternion(0.99414515, -0.055052884, -0.0017033268, 0.09296089)
 bones/73/rotation = Quaternion(-0.005926781, 0.012513391, 0.019383878, 0.9997162)
+
+[node name="aggro" type="Node3D" parent="."]
+script = ExtResource("3_qm65w")
 
 [editable path="Tadeusz"]
