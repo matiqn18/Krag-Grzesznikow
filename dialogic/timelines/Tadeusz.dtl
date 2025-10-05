@@ -33,9 +33,16 @@ if {QuestionAvailable} > 0.0:
 		jump Start
 else:
 	- 1. Krąg Pychy — Zwierciadło Wiecznego Odbicia
+		[signal arg="DropTheSinner"]
 	- 2. Krąg Chciwości — Komnata Rąk
+		[signal arg="DropTheSinner"]
 	- 3. Krąg Nieczystości — Komnata Ciała
+		[signal arg="DropTheSinner"]
 	- 4. Krąg Zazdrości — Dolina Lustra Cudzych Oczu
+		[signal arg="DropTheSinner"]
 	- 5. Krąg Obżarstwa — Wnętrzność Świata
+		[signal arg="DropTheSinner"]
 	- 6. Krąg Lenistwa — Morze Uśpienia
+		[signal arg="DropTheSinner"]
 	- 7. Krąg Gniewu — Komnata Krzyku
+		[signal arg="DropTheSinner"]

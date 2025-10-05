@@ -29,12 +29,20 @@ if {QuestionAvailable} > 0.0:
 	- 7. Co czułeś gdy zdobywałeś to czego pragnałeś, | [if {secret} == true]
 		To co odczuwałem było nie do opisania, ilość emocji które wypełnialy moje ciało powodowały eksplozję. Po chwili jednak pojawiała się pustka, bezdenna niekończąca się potrzeba kolejnych osiągnięć.
 		set {QuestionAvailable} -= 1.0
+		set 
 		jump Start
 else:
 	- 1. Krąg Pychy — Zwierciadło Wiecznego Odbicia
+		[signal arg="DropTheSinner"]
 	- 2. Krąg Chciwości — Komnata Rąk
+		[signal arg="DropTheSinner"]
 	- 3. Krąg Nieczystości — Komnata Ciała
+		[signal arg="DropTheSinner"]
 	- 4. Krąg Zazdrości — Dolina Lustra Cudzych Oczu
+		[signal arg="DropTheSinner"]
 	- 5. Krąg Obżarstwa — Wnętrzność Świata
+		[signal arg="DropTheSinner"]
 	- 6. Krąg Lenistwa — Morze Uśpienia
+		[signal arg="DropTheSinner"]
 	- 7. Krąg Gniewu — Komnata Krzyku
+		[signal arg="DropTheSinner"]
