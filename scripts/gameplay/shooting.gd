@@ -10,15 +10,8 @@ extends Node
 @export var sinner_handler: Node3D;
 
 func _unhandled_input(event: InputEvent) -> void:
-    if event is InputEventMouseButton and Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+    if event is InputEventMouseButton and Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and shotgun.is_visible():
         Shoot();
-    
-func _physics_process(_delta: float) -> void:
-    if sinner_handler.is_aggressive:
-        shotgun.visible = true
-    else:
-        shotgun.visible = false;
-        
     
 func Shoot():
     if fireDelayTimer.is_stopped():
@@ -43,5 +36,9 @@ func CheckFireRaycastCollisionAndSpawnDecal():
 
 func on_death_animation_finished(_unused_arg = ""):
         sinner_handler.active_sinner.animation_player.animation_finished.disconnect(on_death_animation_finished)
+        var bubba = sinner_handler.active_sinner
+        bubba.reparent(get_node("/root/GameScene"), true)
+        sinner_handler.active_sinner = null
+        shotgun.visible = false;
         GameManager.sinner_killed_next_sinner.emit()
         

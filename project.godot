@@ -24,6 +24,11 @@ GameManager="*res://scenes/autoload/game_manager.tscn"
 
 directories/dch_directory={}
 directories/dtl_directory={
+"Andrzej": "res://dialogic/timelines/Andrzej.dtl",
+"Anidzia": "res://dialogic/timelines/Anidzia.dtl",
+"Bubba": "res://dialogic/timelines/Bubba.dtl",
+"Matka": "res://dialogic/timelines/Matka.dtl",
+"Tadzio": "res://dialogic/timelines/Tadzio.dtl",
 "test_timeline": "res://dialogic/timelines/test_timeline.dtl"
 }
 layout/style_directory={
