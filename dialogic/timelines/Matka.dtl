@@ -1,0 +1,40 @@
+set {QuestionAvailable} = 3.0
+label Start
+if {QuestionAvailable} > 0.0:
+	- 1. Powiedz mi, czy kiedykolwiek uważałaś, że jesteś lepsza od innych?
+		Nigdy tak o sobie nie myślałam, chciałam tylko by ktoś wreszczie docenił moją osobę, może bardziej zasługująca. Przez całe życie patrzyłam, jak ona dostaje wszystko miłość, uwagę, . Ja tylko chciałam poczuć to samo. Czy to grzech - pragnąć, by los w końcu spojrzał też na mnie?
+		set {QuestionAvailable} -= 1.0
+		jump Start
+	- 2. Czy kiedykolwiek skrzywdziłaś kogoś dla własnej korzyści?
+		Pragnełam tylko ciszy… czy to tak dużo pragnąć momentu wytchnienia? Jego płacz doprowadzał mnie szaleństwa, Chciałam je tylko uspokoić, uciszyć ten głos powiedział mi jak to zrobić a ja go grzecznie posłuchałam
+		set {QuestionAvailable} -= 1.0
+		jump Start
+	- 3. Czy kiedykolwiek żałowałaś swoich czynów?
+		Żal? Nie… nie od razu. Najpierw była ulga. A potem cisza. Taka gęsta, że zaczynała dzwonić w moich uszach.
+		set {QuestionAvailable} -= 1.0
+		jump Start
+	- 4. Czy inni cierpieli z powodu twoich decyzji?
+		Ona - tak. On - też. Ale najbardziej… maleństwo. Te, które niczemu nie było winne. A mimo to jego płacz doprowadzał mnie do granic szaleństwa
+		set {QuestionAvailable} -= 1.0
+		jump Start
+	- 5. Jakie wspomnienia najbardziej cię dręczą?
+		Ten moment, gdy zrozumiałam, że nie słyszę już płaczu. Dziecko leżało bez jakiegokolwiek ruchu. Było tak cicho… aż dźwięk zabawki w kącie zaczął zwalniać, nuta po nucie gasnąć, jakby sama melodia wiedziała, co się stało. I wtedy, przez tę ciszę, przeszło we mnie coś… coś czarnego, ciężkiego.
+		set {QuestionAvailable} -= 1.0
+		set {secret} = true
+		jump Start
+	- 6. Czy był ktoś, kogo zniszczyłaś lub zdradziłaś?
+		Zdradziłam ją. Siostrę. Kobietę, której nigdy nie przestałam nienawidzić i której nigdy nie przestałam pragnąć być. Zabrałam jej wszystko. A kiedy myślałam, że wreszcie wygrałam… okazało się, że zniszczyłam tylko siebie dostrzegając że nigdy nie będę taka jak ona
+		set {QuestionAvailable} -= 1.0
+		jump Start
+	- 7. Czy cisza, którą teraz słyszysz, naprawdę należy do ciebie… czy do tego głosu? | [if {secret} == true]
+		Do mnie, oczywiście. On był tylko echem… hałasem, który musiał ucichnąć, żebym mogła znów oddychać. Wiesz, cisza to nie pustka. To spokój, który zostaje, kiedy wszystko inne przestaje się ruszać.
+		set {QuestionAvailable} -= 1.0
+		jump Start
+else:
+	- 1. Krąg Pychy — Zwierciadło Wiecznego Odbicia
+	- 2. Krąg Chciwości — Komnata Rąk
+	- 3. Krąg Nieczystości — Komnata Ciała
+	- 4. Krąg Zazdrości — Dolina Lustra Cudzych Oczu
+	- 5. Krąg Obżarstwa — Wnętrzność Świata
+	- 6. Krąg Lenistwa — Morze Uśpienia
+	- 7. Krąg Gniewu — Komnata Krzyku

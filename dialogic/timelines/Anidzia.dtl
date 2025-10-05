@@ -1,0 +1,40 @@
+set {QuestionAvailable} = 3.0
+label Start
+if {QuestionAvailable} > 0.0:
+	- 1. Powiedz mi, czy kiedykolwiek uważałaś, że jesteś lepsza od innych?
+		Lepsza? Nie. Po prostu… bardziej pożądana. Widziałeś kiedyś, jak ktoś patrzy z takim głodem, że aż zapomina oddychać? To nie jest wyższość, to błogosławieństwo. I przekleństwo jednocześnie.
+		set {QuestionAvailable} -= 1.0
+		jump Start
+	- 2. Czy kiedykolwiek skrzywdziłaś kogoś dla własnej korzyści?
+		Nie skrzywdziłam. Oni sami 	przyszli. Każdy z nich chciał coś ode mnie - ja tylko pozwoliłam im wierzyć, że mogą to mieć. Zawsze wiedziałam, kiedy się uśmiechnąć, kiedy odwrócić wzrok. To taka gra… w której przegrywa ten po drugiej stronie
+		set {QuestionAvailable} -= 1.0
+		jump Start
+	- 3. Czy kiedykolwiek żałowałaś swoich czynów?
+		Czasem, kiedy patrzyłam na siebie w lustrze, widziałam dziewczynę, która naprawdę chciała być kochana. Ale to uczucie szybko mijało, kiedy ogromne ilości pieniędzy i komentarzy zalewało mój telefon.
+		set {QuestionAvailable} -= 1.0
+		jump Start
+	- 4. Czy inni cierpieli z powodu twoich decyzji?
+		Oczywiście, byłam ich panią, muzą i obiektem bezgranicznych westchnień. A fragment mojej antencji którą im oferowałam za pokaźne sumy była dla nich niczym narkotyk. W najgorszym momencie mogłam ich go pozbawić.
+		set {QuestionAvailable} -= 1.0
+		set {secret} = true
+		jump Start
+	- 5. Jakie wspomnienia najbardziej cię dręczą?
+		Myślę że te momenty gdy wrzuciłam coś nowego, i czekałam aż ktoś to zobaczy zacznie mnie wielbić i obsypywać pieniędzmi i uwagą. To czekanie było najgorsze
+		set {QuestionAvailable} -= 1.0
+		jump Start
+	- 6. Czy był ktoś, kogo zniszczyłaś lub zdradziłaś?
+		Nie uważam bym kogokolwiek miała kiedyś zniszyć, ale oni i tak się nie liczyli;
+		set {QuestionAvailable} -= 1.0
+		jump Start
+	- 7. Czy bardziej pragnęłaś ich pieniędzy, 	czy tego, jak cię pożądali? | [if {secret} == true]
+		Pieniądze są idealanym przyjacielem, ale  Pożądanie krzyczy. A ja... zawsze słuchałam głośniejszych dźwięków.
+		set {QuestionAvailable} -= 1.0
+		jump Start
+else:
+	- 1. Krąg Pychy — Zwierciadło Wiecznego Odbicia
+	- 2. Krąg Chciwości — Komnata Rąk
+	- 3. Krąg Nieczystości — Komnata Ciała
+	- 4. Krąg Zazdrości — Dolina Lustra Cudzych Oczu
+	- 5. Krąg Obżarstwa — Wnętrzność Świata
+	- 6. Krąg Lenistwa — Morze Uśpienia
+	- 7. Krąg Gniewu — Komnata Krzyku
