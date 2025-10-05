@@ -26,6 +26,9 @@ sky = SubResource("Sky_mw25s")
 sky_rotation = Vector3(0, -1.6371188, -3.1415927)
 ambient_light_source = 3
 glow_enabled = true
+fog_light_color = Color(0.4828844, 0.17185742, 0, 1)
+fog_light_energy = 0.0
+fog_sky_affect = 0.1
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bw6k5"]
 albedo_color = Color(0.5132329, 0.5132329, 0.5132329, 1)
@@ -252,6 +255,7 @@ light_specular = 0.0
 [node name="Camera3D" type="Camera3D" parent="."]
 process_mode = 3
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.13408893, 1.3720051)
+current = true
 script = ExtResource("4_bw6k5")
 mouse_sensitivity = 0.003
 

@@ -1,4 +1,4 @@
-[gd_resource type="AnimationLibrary" load_steps=8 format=3 uid="uid://bx15kl64vnhg7"]
+[gd_resource type="AnimationLibrary" load_steps=9 format=3 uid="uid://bx15kl64vnhg7"]
 
 [ext_resource type="AudioStream" uid="uid://crd14hk0d5kg1" path="res://assets/audio/sfx/loud_noises/Demon_Speaking.wav" id="1_8njhw"]
 [ext_resource type="AudioStream" uid="uid://bidtw2y1i6krt" path="res://assets/audio/sfx/loud_noises/I_Can_See_You.wav" id="2_vb0wi"]
@@ -231,11 +231,64 @@ tracks/6/keys = {
 "update": 0,
 "values": [Vector3(0, -1.097812, 0)]
 }
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../WorldEnvironment:environment:fog_enabled")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../WorldEnvironment:environment:fog_light_energy")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_8njhw"]
+resource_name = "WarningFog"
+length = 30.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../WorldEnvironment:environment:fog_enabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 30),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../WorldEnvironment:environment:fog_light_energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 7.0333333, 22, 29.966667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 16.0, 16.0, 0.0]
+}
 
 [resource]
 _data = {
 &"AndrzejSpeaking": SubResource("Animation_ryp8i"),
 &"ISeeYou": SubResource("Animation_ma0xs"),
 &"MoveSpotlight": SubResource("Animation_bw6k5"),
-&"RESET": SubResource("Animation_e1egb")
+&"RESET": SubResource("Animation_e1egb"),
+&"WarningFog": SubResource("Animation_8njhw")
 }
