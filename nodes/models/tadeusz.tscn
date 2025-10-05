@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bjwngffgb3fl2"]
+
+[ext_resource type="PackedScene" uid="uid://d2xgqdiwi7unu" path="res://assets/models/humans/tadeusz/Tadeusz.glb" id="1_ide26"]
+
+[node name="Tadeusz" type="Node3D"]
+transform = Transform3D(0.49, 0, 0, 0, 0.49, 0, 0, 0, 0.49, 0, 0, 0)
+
+[node name="Tadeusz" parent="." instance=ExtResource("1_ide26")]
