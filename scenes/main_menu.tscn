@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://ciyybxl5k48hx"]
+[gd_scene load_steps=15 format=3 uid="uid://ciyybxl5k48hx"]
 
 [ext_resource type="Script" uid="uid://diay48kkqf03b" path="res://scripts/ui/main_menu.gd" id="1_l6cm7"]
 [ext_resource type="Texture2D" uid="uid://d220symnvrvt7" path="res://assets/ui/icons/speaker.png" id="2_ekxnf"]
@@ -34,6 +34,9 @@ albedo_color = Color(0, 1, 1, 0.39215687)
 
 [sub_resource type="QuadMesh" id="QuadMesh_1ajci"]
 size = Vector2(4.1, 1.6)
+
+[sub_resource type="LabelSettings" id="LabelSettings_oa1go"]
+font_size = 48
 
 [node name="MainMenu" type="Node3D" node_paths=PackedStringArray("master_volume_slider")]
 script = ExtResource("1_l6cm7")
@@ -130,6 +133,19 @@ offset_right = 4.0
 offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = 60.0
+offset_right = 20.0
+offset_bottom = 83.0
+grow_horizontal = 2
+text = "Krąg Grzeszników"
+label_settings = SubResource("LabelSettings_oa1go")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control"]
 layout_mode = 1

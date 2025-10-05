@@ -88,6 +88,10 @@ window/stretch/aspect="keep_height"
 
 project/assembly_name="Hackyeah"
 
+[editor]
+
+movie_writer/movie_file="/home/skeletonek/Pulpit/gameplay.avi"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
