@@ -1,0 +1,40 @@
+set {QuestionAvailable} = 3.0
+label Start
+if {QuestionAvailable} > 0.0:
+	- 1. Powiedz mi, czy kiedykolwiek uważałeś, że jesteś lepszy od innych?
+		Lepszy? Może… w kuchni. Inni gotowali, 	ja tworzyłem. Każdy posiłek był jak koronacja - a ja byłem 	królem smaków
+		set {QuestionAvailable} -= 1.0
+		jump Start
+	- 2. Czy kiedykolwiek skrzywdziłeś kogoś dla własnej korzyści?
+		Jedna z służących zauważyła pewnego wieczoru jak ucztuje w zamkowej spiżarnii, chciała to zgłośić. Nie mogłęm nato pozwolić, Powiem krótko jej aromat ulepszył smak świątecznego gulaszu.
+		set {QuestionAvailable} -= 1.0
+		jump Start
+	- 3. Czy kiedykolwiek żałowałeś swoich czynów?
+		Żałuję każdej chwili, kiedy dzieliłem się posiłkiem. Prawdziwa rozkosz jest bez żadnych ograniczeń kiedy możesz roszkoszować się bez granic przepysznym arcydziełem.
+		set {QuestionAvailable} -= 1.0
+		jump Start
+	- 4. Czy inni cierpieli z powodu twoich decyzji?
+		Cierpieli. Król czasem miał mdłości po moich eksperymentach. Ale ja cierpiałem też - zbyt wiele smaków, zbyt wiele przypraw, a żaden nie wystarczał by mnie zadowolić. To była niekończąca się symfonia pożądania
+		set {QuestionAvailable} -= 1.0
+		set {secret} = true
+		jump Start
+	- 5. Jakie wspomnienia najbardziej cię dręczą?
+		Ten wieczór, kiedy upiekłem tort idealny. Idealny… i musiałem go zjeść sam. Był tak doskonały, że chciałem umrzeć od zachwytu, a nie od jedzenia. Ale bebech… odmówił współpracy.
+		set {QuestionAvailable} -= 1.0
+		jump Start
+	- 6. Czy był ktoś, kogo zniszczyłeś lub zdradziłeś?
+		Zdradziłem swoich uczniów. 	Każdy, kto próbował mnie naśladować, nigdy nie mógł dosięgnąć smaku mojej duszy… więc zjadłem ich wraz z należącymi do nich nadziejami. To była smaczna konieczność.
+		set {QuestionAvailable} -= 1.0
+		jump Start
+	- 7. Co było dla ciebie ważniejsze - smak potrawy czy sam akt jej jedzenia? | [if {secret} == true]
+		Smak jest poezją, ale jedzenie… jedzenie jest moją religią. I nigdy nie kończy się uczta, nigdy nie kończy zawsze chce się jeszcze.
+		set {QuestionAvailable} -= 1.0
+		jump Start
+else:
+- 1. Krąg Pychy — Zwierciadło Wiecznego Odbicia
+- 2. Krąg Chciwości — Komnata Rąk
+- 3. Krąg Nieczystości — Komnata Ciała
+- 4. Krąg Zazdrości — Dolina Lustra Cudzych Oczu
+- 5. Krąg Obżarstwa — Wnętrzność Świata
+- 6. Krąg Lenistwa — Morze Uśpienia
+- 7. Krąg Gniewu — Komnata Krzyku
