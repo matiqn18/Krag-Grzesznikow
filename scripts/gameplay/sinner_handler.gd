@@ -22,7 +22,9 @@ func _ready() -> void:
 func enter_sinner() -> void:
     if sinners_left > 0:
         sinners_left -= 1
-        encounter_counter += randi() % 1
+        encounter_counter += randi() % 2
+        if sinners_left >= 3: # Don't give aggresive sinner on the start'
+            encounter_counter = 0
         is_aggressive = encounter_counter > 0
         active_sinner = aggressive_sinner if is_aggressive else choose_a_sinner();
         active_sinner.reparent(get_node("CurrentSinner"))
