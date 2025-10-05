@@ -29,6 +29,7 @@ if {QuestionAvailable} > 0.0:
 	- 7. Co było dla ciebie ważniejsze - smak potrawy czy sam akt jej jedzenia? | [if {secret} == true]
 		Smak jest poezją, ale jedzenie… jedzenie jest moją religią. I nigdy nie kończy się uczta, nigdy nie kończy zawsze chce się jeszcze.
 		set {QuestionAvailable} -= 1.0
+		set {secret} = false
 		jump Start
 else:
 - 1. Krąg Pychy — Zwierciadło Wiecznego Odbicia
