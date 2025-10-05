@@ -1,8 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://d0svk3sot005x"]
+[gd_scene load_steps=3 format=3 uid="uid://d0svk3sot005x"]
 
 [ext_resource type="PackedScene" uid="uid://d1no0svd0ai4b" path="res://assets/models/humans/booba/Booba.glb" id="1_w4x3j"]
+[ext_resource type="Script" uid="uid://bm32odokbu64w" path="res://scripts/nodes/sinner_node.gd" id="1_wkohb"]
 
-[node name="Booba" type="Node3D"]
+[node name="Booba" type="Node3D" node_paths=PackedStringArray("animation_player")]
 transform = Transform3D(0.505, 0, 0, 0, 0.505, 0, 0, 0, 0.505, 0, 0, 0)
+script = ExtResource("1_wkohb")
+animation_player = NodePath("Booba/AnimationPlayer")
 
 [node name="Booba" parent="." instance=ExtResource("1_w4x3j")]
+
+[editable path="Booba"]
