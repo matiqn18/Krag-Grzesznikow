@@ -1,8 +1,9 @@
-[gd_resource type="AnimationLibrary" load_steps=9 format=3 uid="uid://bx15kl64vnhg7"]
+[gd_resource type="AnimationLibrary" load_steps=11 format=3 uid="uid://bx15kl64vnhg7"]
 
 [ext_resource type="AudioStream" uid="uid://crd14hk0d5kg1" path="res://assets/audio/sfx/loud_noises/Demon_Speaking.wav" id="1_8njhw"]
 [ext_resource type="AudioStream" uid="uid://bidtw2y1i6krt" path="res://assets/audio/sfx/loud_noises/I_Can_See_You.wav" id="2_vb0wi"]
 [ext_resource type="AudioStream" uid="uid://csjq0bw3iye4s" path="res://assets/audio/sfx/loud_noises/loud_noise_1.wav" id="3_mp64v"]
+[ext_resource type="AudioStream" uid="uid://vhtogdhff10l" path="res://assets/audio/sfx/loud_noises/Window_Slap.wav" id="4_vb0wi"]
 
 [sub_resource type="Animation" id="Animation_ryp8i"]
 resource_name = "AndrzejWhispers"
@@ -19,13 +20,25 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector3(0, 4.5, 0), Vector3(0, 4.3, 0), Vector3(0, 4.1, 0), Vector3(0, 3.9, 0), Vector3(0, 3.7, 0), Vector3(0, 3.7, 0), Vector3(0, 4, 0), Vector3(0, 4.3, 0), Vector3(0, 4.5, 0)]
 }
-tracks/1/type = "audio"
+tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("AnomalyPlayer/AndrzejSpeaking/AudioStreamPlayer3D")
-tracks/1/interp = 1
+tracks/1/path = NodePath("../Camera3D/AndrzejSpeakingAnomalyModel:visible")
+tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/keys = {
+"times": PackedFloat32Array(0, 11, 12),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [true, true, false]
+}
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Camera3D/AndrzejSpeakingAnomalyModel/AudioStreamPlayer3D")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
 "clips": [{
 "end_offset": 0.0,
 "start_offset": 0.0,
@@ -33,19 +46,7 @@ tracks/1/keys = {
 }],
 "times": PackedFloat32Array(0)
 }
-tracks/1/use_blend = true
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../Camera3D/AndrzejSpeakingAnomalyModel:visible")
-tracks/2/interp = 2
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 11, 12),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [true, true, false]
-}
+tracks/2/use_blend = true
 
 [sub_resource type="Animation" id="Animation_ma0xs"]
 resource_name = "ISeeYou"
@@ -255,6 +256,66 @@ tracks/8/keys = {
 "update": 0,
 "values": [0.0]
 }
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("AnomalyPlayer/WindowHands/Hand1:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("AnomalyPlayer/WindowHands/Hand2:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("AnomalyPlayer/WindowHands/Hand3:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("AnomalyPlayer/WindowHands/Hand4:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("AnomalyPlayer/WindowHands/Hand5:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_8njhw"]
 resource_name = "WarningFog"
@@ -284,11 +345,107 @@ tracks/1/keys = {
 "values": [0.0, 16.0, 16.0, 0.0]
 }
 
+[sub_resource type="Animation" id="Animation_mp64v"]
+resource_name = "WindowHands"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnomalyPlayer/WindowHands/Hand1:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5, 3, 4.5, 6, 8, 10),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, true, true, true, true, true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnomalyPlayer/WindowHands/Hand2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.5, 3, 4.5, 6, 8, 10),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, true, true, true, true, true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnomalyPlayer/WindowHands/Hand3:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.5, 3, 4.5, 6, 8, 10),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, false, true, true, true, true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnomalyPlayer/WindowHands/Hand4:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.5, 3, 4.5, 6, 8, 10),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, false, false, true, true, true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AnomalyPlayer/WindowHands/Hand5:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1.5, 3, 4.5, 6, 8, 10),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, false, false, false, true, true, false]
+}
+tracks/5/type = "audio"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("AnomalyPlayer/WindowHands/AudioStreamPlayer3D")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"clips": [{
+"end_offset": 1.1899997,
+"start_offset": 0.0,
+"stream": ExtResource("4_vb0wi")
+}, {
+"end_offset": 1.1899997,
+"start_offset": 0.0,
+"stream": ExtResource("4_vb0wi")
+}, {
+"end_offset": 1.1899997,
+"start_offset": 0.0,
+"stream": ExtResource("4_vb0wi")
+}, {
+"end_offset": 1.1899997,
+"start_offset": 0.0,
+"stream": ExtResource("4_vb0wi")
+}, {
+"end_offset": 1.1899997,
+"start_offset": 0.0,
+"stream": ExtResource("4_vb0wi")
+}],
+"times": PackedFloat32Array(0, 1.5, 3, 4.5, 6)
+}
+tracks/5/use_blend = true
+
 [resource]
 _data = {
 &"AndrzejSpeaking": SubResource("Animation_ryp8i"),
 &"ISeeYou": SubResource("Animation_ma0xs"),
 &"MoveSpotlight": SubResource("Animation_bw6k5"),
 &"RESET": SubResource("Animation_e1egb"),
-&"WarningFog": SubResource("Animation_8njhw")
+&"WarningFog": SubResource("Animation_8njhw"),
+&"WindowHands": SubResource("Animation_mp64v")
 }
