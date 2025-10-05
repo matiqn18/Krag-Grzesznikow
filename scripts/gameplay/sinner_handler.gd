@@ -42,7 +42,7 @@ func _on_animation_ended(_unused_arg = ""):
         shooter_component.shotgun.visible = true
         sinner_became_aggresive()
     else:
-        start_dialogic("test_timeline") #TODO <-------- HERE CHANGE TO TIMELINE THAT IS HELD BY THE SINNER
+        start_dialogic()
 
 func sinner_became_aggresive() -> void:
     animation_player.play("sinner_attack")
@@ -51,8 +51,8 @@ func sinner_became_aggresive() -> void:
 func stop_walking() -> void:
     active_sinner.animation_player.stop(true)
 
-func start_dialogic(timeline: String) -> void:
-    Dialogic.start("res://dialogic/timelines/" + timeline + ".dtl")
+func start_dialogic() -> void:
+    Dialogic.start("res://dialogic/timelines/" + active_sinner.name + ".dtl")
 
 func choose_a_sinner() -> Node3D:
     return available_sinners.pick_random()
