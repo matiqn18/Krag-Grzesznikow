@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dxks2iooxg60p"]
+
+[ext_resource type="PackedScene" uid="uid://7s3k8q3fmvr7" path="res://assets/models/humans/suka_angelika/andzela.glb" id="1_2njds"]
+
+[node name="SukaAngelika" type="Node3D"]
+transform = Transform3D(0.495, 0, 0, 0, 0.495, 0, 0, 0, 0.495, 0, 0, 0)
+
+[node name="andzela" parent="." instance=ExtResource("1_2njds")]
+
+[editable path="andzela"]
