@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://34g7yrawvut"]
+
+[ext_resource type="PackedScene" uid="uid://bvmkkrntcsbit" path="res://assets/models/humans/andrzej/ChciwyAndrzejModel.glb" id="1_d46bb"]
+
+[node name="Andrzej" type="Node3D"]
+
+[node name="ChciwyAndrzejModel" parent="." instance=ExtResource("1_d46bb")]
