@@ -29,7 +29,7 @@ if {QuestionAvailable} > 0.0:
 	- 7. Co czułeś gdy zdobywałeś to czego pragnałeś, | [if {secret} == true]
 		To co odczuwałem było nie do opisania, ilość emocji które wypełnialy moje ciało powodowały eksplozję. Po chwili jednak pojawiała się pustka, bezdenna niekończąca się potrzeba kolejnych osiągnięć.
 		set {QuestionAvailable} -= 1.0
-		set 
+		set {secret} = false
 		jump Start
 else:
 	- 1. Krąg Pychy — Zwierciadło Wiecznego Odbicia

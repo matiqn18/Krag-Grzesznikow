@@ -30,6 +30,7 @@ if {QuestionAvailable} > 0.0:
 	- 7. Sekret? | [if {secret} == true]
 		To Dekret
 		set {QuestionAvailable} -= 1.0
+		set {secret} = false
 		jump Start
 else:
 	- 1. Krąg Pychy — Zwierciadło Wiecznego Odbicia

@@ -29,6 +29,7 @@ if {QuestionAvailable} > 0.0:
 	- 7. Czy cisza, którą teraz słyszysz, naprawdę należy do ciebie… czy do tego głosu? | [if {secret} == true]
 		Do mnie, oczywiście. On był tylko echem… hałasem, który musiał ucichnąć, żebym mogła znów oddychać. Wiesz, cisza to nie pustka. To spokój, który zostaje, kiedy wszystko inne przestaje się ruszać.
 		set {QuestionAvailable} -= 1.0
+		set {secret} = false
 		jump Start
 else:
 	- 1. Krąg Pychy — Zwierciadło Wiecznego Odbicia

@@ -29,6 +29,7 @@ if {QuestionAvailable} > 0.0:
 	- 7. Czy bardziej pragnęłaś ich pieniędzy, 	czy tego, jak cię pożądali? | [if {secret} == true]
 		Pieniądze są idealanym przyjacielem, ale  Pożądanie krzyczy. A ja... zawsze słuchałam głośniejszych dźwięków.
 		set {QuestionAvailable} -= 1.0
+		set {secret} = false
 		jump Start
 else:
 	- 1. Krąg Pychy — Zwierciadło Wiecznego Odbicia
