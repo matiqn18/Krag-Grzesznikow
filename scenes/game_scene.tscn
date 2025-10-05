@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://b331egxpamfwm"]
+[gd_scene load_steps=25 format=3 uid="uid://b331egxpamfwm"]
 
 [ext_resource type="Texture2D" uid="uid://c8box06e8u0dx" path="res://assets/images/skybox/skybox.webp" id="1_b5spy"]
 [ext_resource type="Material" uid="uid://dphedafn76ry3" path="res://materials/room_walls.tres" id="1_ycayy"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://34g7yrawvut" path="res://nodes/models/chciwy_andrzej.tscn" id="7_kk2rg"]
 [ext_resource type="Script" uid="uid://4d2k47gormyr" path="res://scripts/gameplay/sinner_handler.gd" id="9_utbpp"]
 [ext_resource type="Script" uid="uid://buafewbw8xf5h" path="res://scripts/managers/events_manager.gd" id="10_rvs2r"]
+[ext_resource type="PackedScene" uid="uid://dxks2iooxg60p" path="res://nodes/models/suka_angelika.tscn" id="10_tqxxy"]
 [ext_resource type="AnimationLibrary" uid="uid://bx15kl64vnhg7" path="res://resources/animations/AnomalyAnimations.tres" id="11_tqxxy"]
 [ext_resource type="Texture2D" uid="uid://c14f3c0wrybjp" path="res://assets/models/humans/chciwy_andrzej/ChciwyAndrzejModel_Eye_01000.png" id="12_5ay1a"]
 
@@ -26,6 +27,9 @@ sky = SubResource("Sky_mw25s")
 sky_rotation = Vector3(0, -1.6371188, -3.1415927)
 ambient_light_source = 3
 glow_enabled = true
+fog_light_color = Color(0.4828844, 0.17185742, 0, 1)
+fog_light_energy = 0.0
+fog_sky_affect = 0.1
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bw6k5"]
 albedo_color = Color(0.5132329, 0.5132329, 0.5132329, 1)
@@ -252,6 +256,7 @@ light_specular = 0.0
 [node name="Camera3D" type="Camera3D" parent="."]
 process_mode = 3
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.13408893, 1.3720051)
+current = true
 script = ExtResource("4_bw6k5")
 mouse_sensitivity = 0.003
 
@@ -276,6 +281,9 @@ libraries = {
 
 [node name="Chciwy Andrzej" parent="SinnerHandler" instance=ExtResource("7_kk2rg")]
 transform = Transform3D(-2.2292808e-08, 0, -0.51, 0, 0.51, 0, 0.51, 0, -2.2292808e-08, 3.8949873, -1.4007999, -2.1208348)
+
+[node name="SukaAngelika" parent="SinnerHandler" instance=ExtResource("10_tqxxy")]
+transform = Transform3D(-2.1637137e-08, 0, -0.495, 0, 0.495, 0, 0.495, 0, -2.1637137e-08, 4.2878356, -1.4177918, -2.2584991)
 
 [node name="Anomalies" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 1.4126741, 0)
