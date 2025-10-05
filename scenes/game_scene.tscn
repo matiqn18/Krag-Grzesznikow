@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://b331egxpamfwm"]
+[gd_scene load_steps=40 format=3 uid="uid://b331egxpamfwm"]
 
 [ext_resource type="Texture2D" uid="uid://c8box06e8u0dx" path="res://assets/images/skybox/skybox.webp" id="1_b5spy"]
 [ext_resource type="Material" uid="uid://dphedafn76ry3" path="res://materials/room_walls.tres" id="1_ycayy"]
@@ -10,10 +10,10 @@
 [ext_resource type="Script" uid="uid://hc1vxahw7fit" path="res://scripts/gameplay/shooting.gd" id="7_5ay1a"]
 [ext_resource type="PackedScene" uid="uid://34g7yrawvut" path="res://nodes/models/andrzej.tscn" id="7_kk2rg"]
 [ext_resource type="AudioStream" uid="uid://cyhvyl806m43m" path="res://assets/audio/shotgun/12ga Pump Shotgun - Gunshot A 005.wav" id="7_ldkr4"]
-[ext_resource type="PackedScene" uid="uid://bnrtf8lw4o4a3" path="res://nodes/models/shotgun.tscn" id="9_liy57"]
+[ext_resource type="PackedScene" path="res://nodes/models/shotgun.tscn" id="9_liy57"]
 [ext_resource type="Script" uid="uid://4d2k47gormyr" path="res://scripts/gameplay/sinner_handler.gd" id="9_utbpp"]
 [ext_resource type="Script" uid="uid://buafewbw8xf5h" path="res://scripts/managers/events_manager.gd" id="10_rvs2r"]
-[ext_resource type="PackedScene" uid="uid://dxks2iooxg60p" path="res://nodes/models/suka_angelika.tscn" id="10_tqxxy"]
+[ext_resource type="PackedScene" uid="uid://dxks2iooxg60p" path="res://nodes/models/angelika.tscn" id="10_tqxxy"]
 [ext_resource type="PackedScene" uid="uid://d0svk3sot005x" path="res://nodes/models/booba.tscn" id="11_liy57"]
 [ext_resource type="AnimationLibrary" uid="uid://bx15kl64vnhg7" path="res://resources/animations/AnomalyAnimations.tres" id="11_tqxxy"]
 [ext_resource type="Texture2D" uid="uid://c14f3c0wrybjp" path="res://assets/models/humans/andrzej/ChciwyAndrzejModel_Eye_01000.png" id="12_5ay1a"]
@@ -40,33 +40,6 @@ fog_sky_affect = 0.1
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bw6k5"]
 albedo_color = Color(0.5132329, 0.5132329, 0.5132329, 1)
-
-[sub_resource type="Animation" id="Animation_mwyo0"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0.10471976, 0.08726646, 0.18325958)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0.045, 0)]
-}
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ro0ie"]
 transparency = 1
@@ -188,7 +161,7 @@ tracks/3/keys = {
 
 [sub_resource type="Animation" id="Animation_77hjl"]
 resource_name = "sinner_attack"
-length = 3.0
+length = 4.0
 step = 100.0
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -197,10 +170,10 @@ tracks/0/path = NodePath("CurrentSinner:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 2.24, 2.5325081),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 1.8000001, 3.0900002, 3.5025082),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(2.3841858e-07, 0, 6.038814), Vector3(3.612296, 0, 6.038814), Vector3(3.612296, 0, 4.371191)]
+"values": [Vector3(0.84, 0, 3.754), Vector3(0.837, 0, 5.489), Vector3(3.612296, 0, 6.038814), Vector3(3.612296, 0, 4.371191)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -209,10 +182,10 @@ tracks/1/path = NodePath("CurrentSinner:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 2.0900002, 2.24),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.38, 1.18, 1.8000001, 2.8000002, 3.07),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 1.5707964, 0), Vector3(0, 1.5707964, 0), Vector3(0, 3.1415927, 0)]
+"values": [Vector3(0, 1.5707964, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 1.5707964, 0), Vector3(0, 1.5707964, 0), Vector3(0, 3.1415927, 0)]
 }
 tracks/2/type = "method"
 tracks/2/imported = false
@@ -221,7 +194,7 @@ tracks/2/path = NodePath(".")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(2.5333333, 3),
+"times": PackedFloat32Array(3.5333333, 4.03),
 "transitions": PackedFloat32Array(1, 1),
 "values": [{
 "args": [],
@@ -254,14 +227,11 @@ tracks/1/path = NodePath(".")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(4.0666666, 4.5),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(4.0666666),
+"transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
 "method": &"stop_walking"
-}, {
-"args": ["test_timeline"],
-"method": &"start_dialogic"
 }]
 }
 tracks/2/type = "value"
@@ -464,6 +434,7 @@ sinner_handler = NodePath("../../SinnerHandler")
 
 [node name="shotgun" parent="Camera3D" instance=ExtResource("9_liy57")]
 transform = Transform3D(0.05903644, -0.26117787, 0.9634837, -0.15074502, 0.95176655, 0.26723838, -0.9868083, -0.16101718, 0.016817648, 0.11, -0.215, -0.4)
+visible = false
 
 [node name="shotgun" parent="Camera3D/shotgun" index="0"]
 transform = Transform3D(0.9811735, -0.17258437, 0.08667829, 0.1812372, 0.97786856, -0.104528464, -0.06671999, 0.1182699, 0.9907375, 0, 0.045, 0)
@@ -480,11 +451,11 @@ volume_db = -10.0
 autoplay = true
 bus = &"Music"
 
-[node name="SinnerHandler" type="Node3D" parent="." node_paths=PackedStringArray("animation_player", "aggressive_sinner")]
+[node name="SinnerHandler" type="Node3D" parent="." node_paths=PackedStringArray("animation_player", "shooter_component")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 3.7044435, -1.4158969, -2.090618)
 script = ExtResource("9_utbpp")
 animation_player = NodePath("SinnerAnimation")
-aggressive_sinner = NodePath("AvailableSinners/Booba")
+shooter_component = NodePath("../Camera3D/Shooter")
 
 [node name="SinnerAnimation" type="AnimationPlayer" parent="SinnerHandler"]
 libraries = {
@@ -492,11 +463,9 @@ libraries = {
 }
 
 [node name="CurrentSinner" type="Node3D" parent="SinnerHandler"]
-transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 0, 0, 0)
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0, 0)
 
 [node name="AvailableSinners" type="Node3D" parent="SinnerHandler"]
-
-[node name="Tadeusz" parent="SinnerHandler/AvailableSinners" instance=ExtResource("13_s76x2")]
 
 [node name="Jessica" parent="SinnerHandler/AvailableSinners" instance=ExtResource("12_mwyo0")]
 
@@ -508,6 +477,9 @@ transform = Transform3D(0.49499997, 0, 0, 0, 0.495, 0, 0, 0, 0.49499997, 0, 0, 0
 
 [node name="Booba" parent="SinnerHandler/AvailableSinners" instance=ExtResource("11_liy57")]
 transform = Transform3D(0.50499994, 0, 0, 0, 0.505, 0, 0, 0, 0.50499994, 0, 0, 0)
+
+[node name="Tadeusz" parent="SinnerHandler/AvailableSinners" instance=ExtResource("13_s76x2")]
+transform = Transform3D(0.48999998, 0, 0, 0, 0.49, 0, 0, 0, 0.48999998, 0, 0, 0)
 
 [node name="Anomalies" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 1.4126741, 0)
