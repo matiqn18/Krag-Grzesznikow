@@ -1,13 +1,29 @@
-Lorem ipsum dolor sit amet, esse tempor mollit sed aliqua sunt, aliqua nulla in eu, cupidatat culpa culpa cillum nisi pariatur. Ullamco sunt reprehenderit duis. Culpa magna cillum incididunt ut exercitation, duis pariatur officia ad. In do esse ullamco, minim id elit ad eu. Exercitation voluptate enim aliquip labore aliqua cupidatat excepteur. Anim consequat ullamco proident et quis. Et incididunt ullamco consequat officia, irure veniam id ex mollit dolore. Enim officia sed et est, tempor in veniam ea do sint qui. Ea magna magna voluptate magna deserunt. Incididunt eiusmod aute adipiscing laborum reprehenderit cillum anim.
-- 1. Powiedz mi, czy kiedykolwiek uważałeś, że jesteś lepszy od innych?
-	Miałem... wrażliwsze zmysły. Inni widzieli, ja czułem. Potrafiłem dostrzec duszę, jej pożądanie, by być posiadaną. A ja tylko na to odpowiadałem.
-- 2. Czy kiedykolwiek skrzywdziłeś kogoś dla własnej korzyści?
-	Gdy dwoje ludzi pożąda tej samej rzeczy, jedno z nich musi cierpieć. To prawo natury. Moje pragnienie było po prostu... silniejsze. Bardziej pierwotne.
-- 3. Czy kiedykolwiek żałowałeś swoich czynów?
-	Żałuję tylko chwil wahania. Tych momentów, gdy rozum próbował stłumić ten cudowny, wszechogarniający głód. To było jak grzech przeciwko życiu.
-- 4. Czy cierpieli inni z powodu twoich decyzji?
-	Ich ból był chwilowy. A rozkosz, jaką ja czerpałem z posiadania... była niemal mistyczna. Wszechświat dąży do równowagi więc ktoś musiał coś stracić bym ja mógł zyskać
-- 5. Jakie wspomnienia najbardziej cię dręczą?
-	Dręczy mnie świadomość bariery która czasem pojawiała się pomiędzy mną a obiektem mojego pożądania. I świadomość, że nawet gdy już go osiągałem, to uczucie spełnienia... trwało tak krótko.
-- 6. Czy był ktoś, kogo zniszczyłeś lub zdradziłeś?
-	Zdradzić można kogoś, komu złożyło się przysięgę. Moja jedyna przysięga była złożona Pięknu. I byłem jej wierny aż do końca.
+set {QuestionAvailable} = 3.0
+label Start
+if {QuestionAvailable} > 0.0:
+	- 1. Powiedz mi, czy kiedykolwiek uważałeś, że jesteś lepszy od innych?
+		Miałem... wrażliwsze zmysły. Inni widzieli, ja czułem. Potrafiłem dostrzec duszę, jej pożądanie, by być posiadaną. A ja tylko na to odpowiadałem.
+		set {QuestionAvailable} -= 1.0
+		jump Start
+	- 2. Czy kiedykolwiek skrzywdziłeś kogoś dla własnej korzyści?
+		Gdy dwoje ludzi pożąda tej samej rzeczy, jedno z nich musi cierpieć. To prawo natury. Moje pragnienie było po prostu... silniejsze. Bardziej pierwotne.
+		set {QuestionAvailable} -= 1.0
+		jump Start
+	- 3. Czy kiedykolwiek żałowałeś swoich czynów?
+		Żałuję tylko chwil wahania. Tych momentów, gdy rozum próbował stłumić ten cudowny, wszechogarniający głód. To było jak grzech przeciwko życiu.
+		set {QuestionAvailable} -= 1.0
+		jump Start
+	- 4. Czy cierpieli inni z powodu twoich decyzji?
+		Ich ból był chwilowy. A rozkosz, jaką ja czerpałem z posiadania... była niemal mistyczna. Wszechświat dąży do równowagi więc ktoś musiał coś stracić bym ja mógł zyskać
+		set {QuestionAvailable} -= 1.0
+		jump Start
+	- 5. Jakie wspomnienia najbardziej cię dręczą?
+		Dręczy mnie świadomość bariery która czasem pojawiała się pomiędzy mną a obiektem mojego pożądania. I świadomość, że nawet gdy już go osiągałem, to uczucie spełnienia... trwało tak krótko.
+		set {QuestionAvailable} -= 1.0
+		jump Start
+	- 6. Czy był ktoś, kogo zniszczyłeś lub zdradziłeś?
+		Zdradzić można kogoś, komu złożyło się przysięgę. Moja jedyna przysięga była złożona Pięknu. I byłem jej wierny aż do końca.
+		set {QuestionAvailable} -= 1.0
+		jump Start
+else:
+	- 1.
