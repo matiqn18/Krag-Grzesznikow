@@ -1,8 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://b1idmn737ycka"]
+[gd_scene load_steps=3 format=3 uid="uid://b1idmn737ycka"]
 
+[ext_resource type="Script" uid="uid://bm32odokbu64w" path="res://scripts/nodes/sinner_node.gd" id="1_asc41"]
 [ext_resource type="PackedScene" uid="uid://b5inwv0j2u2sb" path="res://assets/models/humans/jessica/jessica.glb" id="1_js557"]
 
-[node name="Jessica" type="Node3D"]
+[node name="Jessica" type="Node3D" node_paths=PackedStringArray("animation_player")]
 transform = Transform3D(0.49, 0, 0, 0, 0.49, 0, 0, 0, 0.49, 0, 0, 0)
+script = ExtResource("1_asc41")
+animation_player = NodePath("jessica/AnimationPlayer")
 
 [node name="jessica" parent="." instance=ExtResource("1_js557")]
+
+[editable path="jessica"]

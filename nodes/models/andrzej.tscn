@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://34g7yrawvut"]
+
+[ext_resource type="PackedScene" uid="uid://bvmkkrntcsbit" path="res://assets/models/humans/andrzej/ChciwyAndrzejModel.glb" id="1_d46bb"]
+[ext_resource type="Script" uid="uid://bm32odokbu64w" path="res://scripts/nodes/sinner_node.gd" id="1_n8eim"]
+
+[node name="Andrzej" type="Node3D" node_paths=PackedStringArray("animation_player")]
+script = ExtResource("1_n8eim")
+animation_player = NodePath("ChciwyAndrzejModel/AnimationPlayer")
+
+[node name="ChciwyAndrzejModel" parent="." instance=ExtResource("1_d46bb")]
+
+[editable path="ChciwyAndrzejModel"]
