@@ -2,7 +2,10 @@ extends Node3D
 
 const GAME_SCENE_PATH := "res://scenes/game_scene.tscn"
 
+@export var master_volume_slider: VSlider
+
 func _ready() -> void:
+    master_volume_slider.value = AudioServer.get_bus_volume_linear(0)
     Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
 func _on_play_button_pressed() -> void:

@@ -24,13 +24,13 @@
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_utbpp"]
 panorama = ExtResource("1_b5spy")
 
-[sub_resource type="Sky" id="Sky_mw25s"]
+[sub_resource type="Sky" id="Sky_6aqbo"]
 sky_material = SubResource("PanoramaSkyMaterial_utbpp")
 
 [sub_resource type="Environment" id="Environment_rurhu"]
 background_mode = 2
 background_energy_multiplier = 0.6
-sky = SubResource("Sky_mw25s")
+sky = SubResource("Sky_6aqbo")
 sky_rotation = Vector3(0, -1.6371188, -3.1415927)
 ambient_light_source = 3
 glow_enabled = true
@@ -419,6 +419,8 @@ transform = Transform3D(1.0000001, 7.327472e-15, 7.1054274e-15, 6.661338e-16, 1.
 
 [node name="GunshotPlayer3D" type="AudioStreamPlayer3D" parent="Camera3D"]
 stream = ExtResource("7_ldkr4")
+volume_db = -20.0
+bus = &"SFX"
 
 [node name="FireDelayTimer" type="Timer" parent="Camera3D"]
 autostart = true
