@@ -24,6 +24,11 @@ GameManager="*res://scenes/autoload/game_manager.tscn"
 
 directories/dch_directory={}
 directories/dtl_directory={
+"Andrzej": "res://dialogic/timelines/Andrzej.dtl",
+"Anidzia": "res://dialogic/timelines/Angelika.dtl",
+"Bubba": "res://dialogic/timelines/Bubba.dtl",
+"Matka": "res://dialogic/timelines/Jessica.dtl",
+"Tadzio": "res://dialogic/timelines/Tadeusz.dtl",
 "test_timeline": "res://dialogic/timelines/test_timeline.dtl"
 }
 layout/style_directory={
@@ -34,7 +39,8 @@ glossary/default_case_sensitive=true
 layout/style_list=["res://dialogic/style.tres"]
 layout/default_style="res://dialogic/style.tres"
 variables={
-"QuestionAvailable": 3
+"QuestionAvailable": 3,
+"secret": false
 }
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.01
