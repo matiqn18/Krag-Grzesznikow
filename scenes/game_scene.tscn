@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://b331egxpamfwm"]
+[gd_scene load_steps=31 format=3 uid="uid://b331egxpamfwm"]
 
 [ext_resource type="Texture2D" uid="uid://c8box06e8u0dx" path="res://assets/images/skybox/skybox.webp" id="1_b5spy"]
 [ext_resource type="Material" uid="uid://dphedafn76ry3" path="res://materials/room_walls.tres" id="1_ycayy"]
@@ -7,7 +7,10 @@
 [ext_resource type="Script" uid="uid://ctb2eo3g6xxds" path="res://scripts/gameplay/camera_movement.gd" id="4_bw6k5"]
 [ext_resource type="PackedScene" uid="uid://bvmkkrntcsbit" path="res://assets/models/humans/andrzej/ChciwyAndrzejModel.glb" id="6_5ay1a"]
 [ext_resource type="AudioStream" uid="uid://dddnl060qj0bf" path="res://assets/audio/ambient/default_ambient.wav" id="6_rurhu"]
-[ext_resource type="PackedScene" uid="uid://34g7yrawvut" path="res://nodes/models/andrzej.tscn" id="7_kk2rg"]
+[ext_resource type="Script" uid="uid://hc1vxahw7fit" path="res://scripts/gameplay/shooting.gd" id="7_5ay1a"]
+[ext_resource type="PackedScene" uid="uid://34g7yrawvut" path="res://nodes/models/chciwy_andrzej.tscn" id="7_kk2rg"]
+[ext_resource type="AudioStream" uid="uid://cyhvyl806m43m" path="res://assets/audio/shotgun/12ga Pump Shotgun - Gunshot A 005.wav" id="7_ldkr4"]
+[ext_resource type="PackedScene" uid="uid://bnrtf8lw4o4a3" path="res://nodes/models/shotgun.tscn" id="9_liy57"]
 [ext_resource type="Script" uid="uid://4d2k47gormyr" path="res://scripts/gameplay/sinner_handler.gd" id="9_utbpp"]
 [ext_resource type="Script" uid="uid://buafewbw8xf5h" path="res://scripts/managers/events_manager.gd" id="10_rvs2r"]
 [ext_resource type="PackedScene" uid="uid://dxks2iooxg60p" path="res://nodes/models/angelika.tscn" id="10_tqxxy"]
@@ -36,6 +39,66 @@ fog_sky_affect = 0.1
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bw6k5"]
 albedo_color = Color(0.5132329, 0.5132329, 0.5132329, 1)
+
+[sub_resource type="Animation" id="Animation_liy57"]
+resource_name = "shoot"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1283695, 0.13244471, 0.13333334, 0.6666667, 0.6683364),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.099483766, 0.20071286, 0.5235988), Vector3(0.10234952, 0.20644438, 0.3631163), Vector3(0.10297442, 0.20769419, 0.3281219), Vector3(0, 0, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.13040711, 0.13244471, 0.6683364),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0.045, 0), Vector3(0, 0.045, 0), Vector3(-0.135, 0.045, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_mwyo0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.10471976, 0.08726646, 0.18325958)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0.045, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_s76x2"]
+_data = {
+&"RESET": SubResource("Animation_mwyo0"),
+&"shoot": SubResource("Animation_liy57")
+}
 
 [sub_resource type="Animation" id="Animation_b5spy"]
 length = 0.001
@@ -260,8 +323,32 @@ mouse_sensitivity = 0.003
 transform = Transform3D(-0.9999999, 8.742277e-08, 0, -8.6094616e-08, -0.9848076, -0.17364818, -1.5180804e-08, -0.17364816, 0.9848077, 0, 4.5, 0)
 visible = false
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Camera3D/AndrzejSpeakingAnomalyModel"]
-transform = Transform3D(-1.0000001, -8.609466e-08, -1.5180808e-08, 8.7422805e-08, -0.98480797, -0.17364822, 5.5318663e-15, -0.17364821, 0.98480785, 3.085592e-07, 3.529507, -0.024917841)
+[node name="RayCast3D" type="RayCast3D" parent="Camera3D"]
+
+[node name="GunshotPlayer3D" type="AudioStreamPlayer3D" parent="Camera3D"]
+stream = ExtResource("7_ldkr4")
+
+[node name="FireDelayTimer" type="Timer" parent="Camera3D"]
+autostart = true
+
+[node name="Shooter" type="Node3D" parent="Camera3D" node_paths=PackedStringArray("raycast", "gunshotPlayer", "fireDelayTimer", "animationPlayer")]
+script = ExtResource("7_5ay1a")
+raycast = NodePath("../RayCast3D")
+gunshotPlayer = NodePath("../GunshotPlayer3D")
+fireDelayTimer = NodePath("../FireDelayTimer")
+animationPlayer = NodePath("../shotgun/AnimationPlayer")
+
+[node name="shotgun" parent="Camera3D" instance=ExtResource("9_liy57")]
+transform = Transform3D(0.05903644, -0.26117787, 0.9634837, -0.15074502, 0.95176655, 0.26723838, -0.9868083, -0.16101718, 0.016817648, 0.11, -0.215, -0.4)
+
+[node name="shotgun" parent="Camera3D/shotgun" index="0"]
+transform = Transform3D(0.9811735, -0.17258437, 0.08667829, 0.1812372, 0.97786856, -0.104528464, -0.06671999, 0.1182699, 0.9907375, 0, 0.045, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera3D/shotgun"]
+root_node = NodePath("../shotgun")
+libraries = {
+&"": SubResource("AnimationLibrary_s76x2")
+}
 
 [node name="AmbientPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_rurhu")
@@ -349,3 +436,5 @@ material = SubResource("StandardMaterial3D_mwyo0")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3261249, 1.3179867)
 
 [connection signal="timeout" from="Anomalies/AnomalyTimer" to="Anomalies/AnomalyController" method="trigger_anomaly_time"]
+
+[editable path="Camera3D/shotgun"]
